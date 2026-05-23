@@ -3,10 +3,41 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Webpage</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
+    <title>Student Marks Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Welcome to my Website</h1>
+<div class="form" id="form">
+    <h1>Student Marks Entry</h1>
+    <form>
+        <label>Student Name</label>
+        <input type="text" id="name" placeholder="Enter student name">
+
+        <label>Tamil Mark</label>
+        <input type="text" id="tamil" placeholder="Enter Tamil mark">
+
+        <label>English Mark</label>
+        <input type="text" id="english" placeholder="Enter English mark">
+
+        <label>Maths Mark</label>
+        <input type="text" id="maths" placeholder="Enter Maths mark">
+
+        <label>Science Mark</label>
+        <input type="text" id="science" placeholder="Enter Science mark">
+
+        <label>Social Mark</label>
+        <input type="text" id="social" placeholder="Enter Social mark">
+
+        <button type="button" id="calculateBtn" onclick="calculate()">Calculate</button>
+    </form>
+</div>
+
+<div class="resultSection" id="resultSection" style="display:none">
+    <div id="result"></div>
+    <button onclick="goBack()">OK</button>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
