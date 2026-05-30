@@ -5,7 +5,24 @@ function calculate() {
     let maths = parseInt(document.getElementById("maths").value);
     let science = parseInt(document.getElementById("science").value);
     let social = parseInt(document.getElementById("social").value);
-    let total = tamil + english + maths + science + social;
+
+    let marks = [tamil,english,maths,science,social];
+
+    for (let i= 0; i<marks.length; i++){
+        if (isNaN(marks[i])){
+            alert("Please enter marks for all subjects")
+            return
+        } else if (marks[i]<0 || marks[i]>100){
+           alert("Marks must be between 0 and 100")
+            return
+        }
+    }
+
+    let total = 0;
+     for (let i= 0; i<marks.length; i++){
+       total+=marks[i];
+    }
+
     let percentage = total / 5;
     let grade;
     
@@ -27,13 +44,13 @@ function calculate() {
     <br><br>
     Grade : ${grade}`;
 
-    document.getElementById("form").style.display = "none";
+    document.getElementById("forms").style.display = "none";
     document.getElementById("resultSection").style.display = "block";
 }
 
 
 function goBack(){
     document.getElementById("resultSection") .style.display = "none";
-    document.getElementById("form").style.display = "block";
-
+    document.getElementById("forms").style.display = "block";
+    document.getElementById("studentForm").reset()
 }
